@@ -1,12 +1,11 @@
 const express = require("express");
-
+var route = require('./routes/routes');
 const app = express();
 
 let port = process.env.PORT || 3000;
 
-app.get("/demo", (req, res) => {
-    return res.json({ data: [{ "name": "sikandar" }, { "name": "Ranjeet" }, { "name": "Amit" }, {}] });
-});
+
+app.use('/api', route);
 
 app.listen(port, () => {
     console.log("Express app is listening on port");
