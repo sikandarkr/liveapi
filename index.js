@@ -1,3 +1,5 @@
+const dotenv = require("dotenv");
+dotenv.config();
 const express = require("express");
 var mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -11,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Parses the text as json
 app.use(bodyParser.json());
 
-const uri = "mongodb+srv://sikandar:CZx7Ekl5q7nZb1Kx@liveapicluster.ekwrc.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const uri = process.env.MONGO_URL;
 mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
