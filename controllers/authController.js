@@ -78,10 +78,14 @@ module.exports = {
                     );
                 }
                 else {
-
+                    return res.status(200).json(
+                        {
+                            "messaage": "login failed",
+                            "token": null,
+                            "status": 401,
+                            "response": null,
+                        });
                 }
-
-
             }
             // if (docs.length) {
             //     var result = bcrypt.compareSync(req.body.password, docs.password);
