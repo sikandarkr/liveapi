@@ -20,6 +20,10 @@ const UserSchema = new Schema({
         trim: true,
         required: true
     },
+    date: {
+        type: Date,
+        default: Date.now,
+    },
 
 });
 //hash user password before saving into database
